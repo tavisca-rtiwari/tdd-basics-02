@@ -4,7 +4,7 @@ namespace ConsoleCalculator
 {
     public class Calculator
     {
-        private string output = null;
+        private string output = null,tempOutput=null;
         private char operator1 = 'z',operator2='z';
         private double operand1 = 0, operand2 = 0;
         public string SendKeyPress(char key)
@@ -33,22 +33,37 @@ namespace ConsoleCalculator
                     operator2 = key;
                     operator1 = key;
                     operand1 = double.Parse(output);
-
+                    return output;
                 }
                 else
-                {
-                    operand1 = double.Parse(output);
-                    operator1 = key;
-                    operator2 = key;
-                    
+                {   if (output == null)
+                    {
+                        operator1 = 'z';
+                        operand1 = 0;
+                        operand2 = 0;
+                        output = null;
+                        return "0";
+                    }
+                    else
+                    {
+                        operand1 = double.Parse(output);
+                        operator1 = key;
+                        operator2 = key;
+                    }
                 }
                 return output;
+            
             }
             else if (IsEqual(keyValue))
             {
                 GetTotal();
                 operator1 = 'z';
-                return output;
+                if (output != null)
+                {
+                    tempOutput = output;
+                    output = null;
+                }
+                return tempOutput;
 
             }
             else if (IsClear(keyValue))
@@ -74,7 +89,8 @@ namespace ConsoleCalculator
             }
             else if (key == 46)
             {
-                if (!output.Contains(".") )
+                if (output == null) output = ".";
+                if ( !output.Contains("."))
                 {
                     output = output + ".";
                 }
@@ -102,10 +118,6 @@ namespace ConsoleCalculator
             if (output != null)
             {
                 operand2 = double.Parse(output);
-            }
-            else
-            {
-                output = "0";
             }
             switch (operator1)
             {
