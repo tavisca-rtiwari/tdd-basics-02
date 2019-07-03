@@ -17,21 +17,7 @@ namespace ConsoleCalculator.Tests
          
         }
         [Fact]
-        public void TestNumber()
-        {
-            calculator.SendKeyPress('1');
-            Assert.Equal("10", calculator.SendKeyPress('0'));
-        }
-        [Fact]
-        public void TestOperator()
-        {
-            calculator.SendKeyPress('1');
-            calculator.SendKeyPress('+');
-            calculator.SendKeyPress('1');
-            Assert.Equal("2", calculator.SendKeyPress('='));
-        }
-        [Fact]
-        public void TestAdd()
+        public void TestAddition()
         {
             calculator.SendKeyPress('1');
             calculator.SendKeyPress('0');
@@ -41,16 +27,7 @@ namespace ConsoleCalculator.Tests
 
         }
         [Fact]
-        public void TestSubtract()
-        {
-            calculator.SendKeyPress('1');
-            calculator.SendKeyPress('-');
-            calculator.SendKeyPress('1');
-            Assert.Equal("0", calculator.SendKeyPress('='));
-
-        }
-        [Fact]
-        public void TestMultiply()
+        public void TestMultiplication()
         {
             calculator.SendKeyPress('1');
             calculator.SendKeyPress('x');
@@ -65,6 +42,16 @@ namespace ConsoleCalculator.Tests
             calculator.SendKeyPress('/');
             calculator.SendKeyPress('0');
             Assert.Equal("-E-", calculator.SendKeyPress('='));
+        }
+        [Fact]
+        public void TestDivision()
+        {
+            calculator.SendKeyPress('1');
+            calculator.SendKeyPress('0');
+            calculator.SendKeyPress('0');
+            calculator.SendKeyPress('/');
+            calculator.SendKeyPress('2');
+            Assert.Equal("50", calculator.SendKeyPress('='));
         }
         [Fact]
         public void TestClear()
@@ -97,6 +84,25 @@ namespace ConsoleCalculator.Tests
             calculator.SendKeyPress('+');
             calculator.SendKeyPress('2');
             Assert.Equal("2.1", calculator.SendKeyPress('='));
+        }
+        [Fact]
+        public void TestSubtraction()
+        {
+            calculator.SendKeyPress('1');
+            calculator.SendKeyPress('-');
+            calculator.SendKeyPress('1');
+            Assert.Equal("0", calculator.SendKeyPress('='));
+
+        }
+        [Fact]
+        public void TestMultipleExpression()
+        {
+            calculator.SendKeyPress('2');
+            calculator.SendKeyPress('-');
+            calculator.SendKeyPress('1');
+            calculator.SendKeyPress('+');
+            calculator.SendKeyPress('3');
+            Assert.Equal("4", calculator.SendKeyPress('='));
         }
     }
 }
