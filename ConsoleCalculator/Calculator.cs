@@ -1,32 +1,31 @@
-﻿using System;
-using Operation;
+﻿using Operation;
 namespace ConsoleCalculator
 {
     public class Calculator
     {
-        public static string output = null,tempOutput= null;
-        public static char operator1 = '%',operator2='%';
+        public static string output = null, tempOutput = null;
+        public static char operator1 = '%', operator2 = '%';
         public static double operand1 = 0, operand2 = 0;
         public string SendKeyPress(char key)
-        {
+        { 
             CheckKeys obj = null;
-            if(Operations.IsNumber(key))
+            if (Operations.IsNumber(key))
             {
                 obj = new Number();
             }
-            if(Operations.IsOperator(key))
+            if (Operations.IsOperator(key))
             {
                 obj = new Operator();
             }
-            if(Operations.IsEqual(key))
+            if (Operations.IsEqual(key))
             {
                 obj = new Equal();
             }
-            if(Operations.IsClear(key))
+            if (Operations.IsClear(key))
             {
                 obj = new Clear();
             }
-            if(Operations.IsToggle(key))
+            if (Operations.IsToggle(key))
             {
                 obj = new Toggle();
             }
@@ -44,6 +43,6 @@ namespace ConsoleCalculator
             }
             return "0";
         }
-       
+
     }
 }

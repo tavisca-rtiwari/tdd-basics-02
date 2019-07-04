@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Operation;
-using ConsoleCalculator;
+﻿using Operation;
 
 namespace ConsoleCalculator
 {
@@ -10,8 +6,8 @@ namespace ConsoleCalculator
     {
         public string SelectKeys(char key)
         {
-            
-            if (Operations.IsOperator((int)Calculator.operator2))
+
+            if (Operations.IsOperator(Calculator.operator2))
             {
                 Calculator.operator2 = '%';
                 Calculator.output = null;

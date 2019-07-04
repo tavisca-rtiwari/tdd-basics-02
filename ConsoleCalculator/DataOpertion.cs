@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ConsoleCalculator;
 using Operation;
-using ConsoleCalculator;
 
 namespace Data
 {
@@ -15,6 +12,7 @@ namespace Data
             {
                 Calculator.operand2 = double.Parse(Calculator.output);
             }
+           
             switch (Calculator.operator1)
             {
                 case '-':
@@ -35,7 +33,7 @@ namespace Data
                     Calculator.operand2 = 0;
                     break;
             }
-            
+
         }
     }
 }

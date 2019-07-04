@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Data;
 using Operation;
-using Data;
 
 namespace ConsoleCalculator
 {
@@ -11,8 +8,8 @@ namespace ConsoleCalculator
         public string SelectKeys(char key)
         {
             DataOpertion dataOpertion = new DataOpertion();
-            
-            if (Operations.IsOperator((int)Calculator.operator1))
+
+            if (Operations.IsOperator(Calculator.operator1))
             {
                 dataOpertion.GetTotal();
                 Calculator.operator2 = key;
@@ -28,11 +25,13 @@ namespace ConsoleCalculator
                 Calculator.output = null;
                 return "0";
             }
-                
-             Calculator.operand1 = double.Parse(Calculator.output);
-             Calculator.operator1 = key;
-             Calculator.operator2 = key;
-             return Calculator.output;
+
+            Calculator.operand1 = double.Parse(Calculator.output);
+            Calculator.operator1 = key;
+            Calculator.operator2 = key;
+            Calculator.tempOutput = Calculator.output;
+            Calculator.output = null;
+            return Calculator.tempOutput;
         }
     }
 }

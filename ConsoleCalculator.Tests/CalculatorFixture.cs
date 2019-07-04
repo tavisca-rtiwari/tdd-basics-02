@@ -1,6 +1,5 @@
 using System;
 using Xunit;
-using ConsoleCalculator;
 
 namespace ConsoleCalculator.Tests
 {
@@ -14,7 +13,7 @@ namespace ConsoleCalculator.Tests
         public void Dispose()
         {
             calculator = null;
-         
+
         }
         [Fact]
         public void TestAddition()

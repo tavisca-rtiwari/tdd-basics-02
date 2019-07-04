@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Operation
+﻿namespace Operation
 {
     class Operations
     {
@@ -22,7 +18,7 @@ namespace Operation
         public string Multiply(double operand1, double operand2)
         {
             return (operand1 * operand2).ToString();
-        
+
         }
 
         public string Division(double operand1, double operand2)
@@ -35,13 +31,13 @@ namespace Operation
             {
                 return (operand1 / operand2).ToString();
             }
-            
+
         }
 
         public string Subtract(double operand1, double operand2)
         {
             return (operand1 - operand2).ToString();
- 
+
         }
 
         public string Add(double operand1, double operand2)
