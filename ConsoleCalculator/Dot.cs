@@ -1,6 +1,6 @@
 ﻿namespace ConsoleCalculator
 {
-    class Dot : CheckKeys
+    class Dot : ICheckKeys
     {
         public string SelectKeys(char key)
         {

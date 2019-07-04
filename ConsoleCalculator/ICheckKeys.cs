@@ -1,6 +1,6 @@
 ﻿namespace ConsoleCalculator
 {
-    interface CheckKeys
+    interface ICheckKeys
     {
         string SelectKeys(char key);
     }

@@ -2,7 +2,7 @@
 
 namespace ConsoleCalculator
 {
-    class Equal : CheckKeys
+    class Equal : ICheckKeys
     {
         public string SelectKeys(char key)
         {

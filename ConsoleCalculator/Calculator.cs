@@ -8,7 +8,7 @@ namespace ConsoleCalculator
         public static double operand1 = 0, operand2 = 0;
         public string SendKeyPress(char key)
         { 
-            CheckKeys obj = null;
+            ICheckKeys obj = null;
             if (Operations.IsNumber(key))
             {
                 obj = new Number();

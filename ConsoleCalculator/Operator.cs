@@ -3,7 +3,7 @@ using Operation;
 
 namespace ConsoleCalculator
 {
-    class Operator : CheckKeys
+    class Operator : ICheckKeys
     {
         public string SelectKeys(char key)
         {
