@@ -8,34 +8,11 @@ namespace ConsoleCalculator
         public static double operand1 = 0, operand2 = 0;
         public string SendKeyPress(char key)
         { 
-            ICheckKeys obj = null;
-            if (Operations.IsNumber(key))
-            {
-                obj = new Number();
-            }
-            if (Operations.IsOperator(key))
-            {
-                obj = new Operator();
-            }
-            if (Operations.IsEqual(key))
-            {
-                obj = new Equal();
-            }
-            if (Operations.IsClear(key))
-            {
-                obj = new Clear();
-            }
-            if (Operations.IsToggle(key))
-            {
-                obj = new Toggle();
-            }
-            if (Operations.IsDot(key))
-            {
-                obj = new Dot();
-            }
+            ICheck obj = new Check();
+            
             if (obj != null)
             {
-                return obj.SelectKeys(key);
+                return obj.Calculate(key);
             }
             if (output != null)
             {

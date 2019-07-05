@@ -4,6 +4,11 @@ namespace ConsoleCalculator
 {
     class Number : ICheckKeys
     {
+        public bool MatchKey(char key)
+        {
+            return Operations.IsNumber(key);
+        }
+
         public string SelectKeys(char key)
         {
 

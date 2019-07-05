@@ -1,7 +1,13 @@
-﻿namespace ConsoleCalculator
+﻿using Operation;
+namespace ConsoleCalculator
 {
     class Clear : ICheckKeys
     {
+        public bool MatchKey(char key)
+        {
+            return Operations.IsClear(key);
+        }
+
         public string SelectKeys(char key)
         {
             Calculator.operator1 = '%';

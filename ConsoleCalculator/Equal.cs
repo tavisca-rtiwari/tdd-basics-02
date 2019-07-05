@@ -1,9 +1,14 @@
 ﻿using Data;
-
+using Operation;
 namespace ConsoleCalculator
 {
     class Equal : ICheckKeys
     {
+        public bool MatchKey(char key)
+        {
+            return Operations.IsEqual(key);
+        }
+
         public string SelectKeys(char key)
         {
             DataOpertion dataOpertion = new DataOpertion();

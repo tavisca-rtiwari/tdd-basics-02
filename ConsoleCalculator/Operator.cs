@@ -5,6 +5,11 @@ namespace ConsoleCalculator
 {
     class Operator : ICheckKeys
     {
+        public bool MatchKey(char key)
+        {
+            return Operations.IsOperator(key);
+        }
+
         public string SelectKeys(char key)
         {
             DataOpertion dataOpertion = new DataOpertion();

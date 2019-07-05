@@ -1,7 +1,13 @@
-﻿namespace ConsoleCalculator
+﻿using Operation;
+namespace ConsoleCalculator
 {
     class Dot : ICheckKeys
     {
+        public bool MatchKey(char key)
+        {
+            return Operations.IsDot(key);
+        }
+
         public string SelectKeys(char key)
         {
             if (Calculator.output == null)

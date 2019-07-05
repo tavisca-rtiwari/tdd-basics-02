@@ -1,9 +1,14 @@
 ﻿using System;
-
+using Operation;
 namespace ConsoleCalculator
 {
     class Toggle : ICheckKeys
     {
+        public bool MatchKey(char key)
+        {
+            return Operations.IsToggle(key);
+        }
+
         public string SelectKeys(char key)
         {
             if (Calculator.output.Equals("0"))
